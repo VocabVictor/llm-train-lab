@@ -1,0 +1,244 @@
+:root {
+  color-scheme: light;
+  --bg: #f3ecdf;
+  --ink: #1d1a16;
+  --deep: #0f2e52;
+  --gold: #c9892f;
+  --card: rgba(255, 250, 241, 0.78);
+  --line: rgba(15, 46, 82, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background:
+    radial-gradient(circle at top left, rgba(201, 137, 47, 0.18), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(15, 46, 82, 0.18), transparent 28%),
+    var(--bg);
+  color: var(--ink);
+  font-family: "Iowan Old Style", "Palatino Linotype", serif;
+}
+
+a {
+  color: inherit;
+}
+
+.page {
+  width: min(1220px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: 1.4rem;
+  align-items: stretch;
+  margin-bottom: 1.6rem;
+}
+
+.heroCopy,
+.heroCard,
+.box {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 48px rgba(15, 46, 82, 0.1);
+}
+
+.heroCopy {
+  padding: 2rem;
+}
+
+.heroCard {
+  padding: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  color: #8a5d20;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 0.96;
+}
+
+.lede {
+  font-size: 1.08rem;
+  line-height: 1.8;
+  max-width: 44rem;
+}
+
+.heroLinks {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.heroLinks a {
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(201, 137, 47, 0.45);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(201, 137, 47, 0.14);
+  color: #8a5d20;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.heroCard ul {
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.box {
+  padding: 1.3rem;
+  min-height: 420px;
+}
+
+.boxTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.boxTop h2 {
+  margin: 0;
+}
+
+.boxTop span {
+  color: #8a5d20;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.boxText {
+  line-height: 1.75;
+  min-height: 76px;
+}
+
+.term {
+  min-height: 180px;
+  padding: 1rem;
+  background: #10151f;
+  color: #eaf1ff;
+  border-radius: 18px;
+  font-family: "SFMono-Regular", "Fira Code", monospace;
+  overflow: auto;
+}
+
+.termLine + .termLine {
+  margin-top: 0.5rem;
+}
+
+.termForm {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.7rem;
+  align-items: center;
+  margin-top: 0.9rem;
+  padding: 0.85rem 1rem;
+  border-radius: 16px;
+  background: #fff9f0;
+  border: 1px solid var(--line);
+}
+
+.termForm input {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  outline: none;
+}
+
+.mathWrap {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff9f0;
+}
+
+.mathField {
+  width: 100%;
+  min-height: 84px;
+  font-size: 1.5rem;
+}
+
+.actBtn {
+  margin-top: 0.9rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--deep);
+  color: white;
+  padding: 0.8rem 1.1rem;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.tileGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.tile {
+  padding: 1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(15, 46, 82, 0.18);
+  background: #fff9f0;
+  box-shadow: 0 12px 24px rgba(15, 46, 82, 0.06);
+  cursor: grab;
+  font-weight: 700;
+}
+
+.msg {
+  min-height: 48px;
+  line-height: 1.7;
+  font-weight: 700;
+}
+
+.msg.ok {
+  color: #1f6b39;
+}
+
+.msg.bad {
+  color: #9a3e20;
+}
+
+.subtle {
+  color: rgba(29, 26, 22, 0.68);
+  line-height: 1.7;
+}
+
+@media (max-width: 1040px) {
+  .hero,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
